@@ -38,6 +38,12 @@ public class Buvesz {
         }
         return ujPakli;
     }
+    private static void kever(){
+        //majd megcsin
+    }
+    private static void melyikVolt(){
+        System.out.println("A gondolt lap:" + pakli[11]);
+    }
     private static void kirak(String[] pakli){
        
         for (int i = 1; i < pakli.length; i++) {
@@ -49,5 +55,6 @@ public class Buvesz {
           
         }
     }
+    
     
 }
