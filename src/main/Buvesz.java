@@ -65,6 +65,13 @@ public class Buvesz {
                     ujPakli[i + 7] = regipakli[19 - (i - 1) * 3];
                     ujPakli[i + 14] = regipakli[21 - (i -1) * 3];
                 }
+            break;
+            case 2: for (int i = 1; i < 8; i++) {
+                    ujPakli[i] = regipakli[19 - (i - 1) * 3];
+                    ujPakli[i + 7] = regipakli[20 - (i - 1) * 3];
+                    ujPakli[i + 14] = regipakli[21 - (i -1) * 3];
+                }
+            break;
             case 3: for (int i = 1; i < 8; i++) {
                     ujPakli[i] =  regipakli[19 - (i - 1) * 3];
                     ujPakli[i + 7] = regipakli[21 - (i -1) *3];
