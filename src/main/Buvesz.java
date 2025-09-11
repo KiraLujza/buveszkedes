@@ -1,6 +1,8 @@
 
 package main;
 
+import java.util.Scanner;
+
 
 public class Buvesz {
 
@@ -12,6 +14,13 @@ public class Buvesz {
         String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
         pakli =osszerak(szinek,ertekek);
         kirak(pakli);
+        for (int i = 1; i < 4; i++) {
+            int oszlop = bekeres();
+            String[] ujPakli = kever(oszlop, pakli);
+            pakli = ujPakli;
+            kirak(pakli);
+        }
+        melyikVolt();
         
     }
     public static String[] osszerak(String[] szinek, String[] ertekek){
@@ -38,8 +47,35 @@ public class Buvesz {
         }
         return ujPakli;
     }
-    private static void kever(){
-        //majd megcsin
+    public static int bekeres(){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Melyik oszlopban van?");
+        int sor = sc.nextInt();
+        return sor;
+    }
+    
+    private static String[] kever( int bekertSzam,  String[] regipakli){
+        
+        String[] ujPakli = new String[22];
+        
+        switch (bekertSzam) {
+            case 1: for (int i = 1; i < 8; i++) {
+                    ujPakli[i] = regipakli[20 - (i - 1) * 3];
+                    ujPakli[i + 7] = regipakli[19 - (i - 1) * 3];
+                    ujPakli[i + 14] = regipakli[21 - (i -1) * 3];
+                }
+            case 3: for (int i = 1; i < 8; i++) {
+                    ujPakli[i] =  regipakli[19 - (i - 1) * 3];
+                    ujPakli[i + 7] = regipakli[21 - (i -1) *3];
+                    ujPakli[i + 14] = regipakli[20 - (i - 1) * 3];
+                }
+                
+            break;
+               
+        }
+        return ujPakli;
+        
     }
     private static void melyikVolt(){
         System.out.println("A gondolt lap:" + pakli[11]);
